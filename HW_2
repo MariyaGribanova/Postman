@@ -403,15 +403,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// 1. Вставить параметр salary из окружения в request:\r",
-							"pm.environment.get(\"salary\");\r",
-							"\r",
-							"// 2. Вставить параметр age из окружения в age:\r",
-							"pm.environment.get(\"age\");\r",
-							"\r",
-							"// 3. Вставить параметр name из окружения в name:\r",
-							"pm.environment.get(\"name\");\r",
-							"\r",
 							"// 5. Статус код 200\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -523,7 +514,23 @@
 				"header": [],
 				"body": {
 					"mode": "formdata",
-					"formdata": []
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Mariya",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "34",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1000",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
 					"raw": "http://162.55.220.72:5005/user_info_2",
